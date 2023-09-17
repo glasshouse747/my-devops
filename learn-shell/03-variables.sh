@@ -8,5 +8,4 @@ y=true
 name=DevOpsGuy
 
 # How to access a variable
-$a
 echo value of a = $a
