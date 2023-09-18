@@ -1,0 +1,7 @@
+fruits:
+    - banana:
+        cost: 20
+        quantity: 500
+    - apple:
+        cost: 30
+        quantity: 1000
