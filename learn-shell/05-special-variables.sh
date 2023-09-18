@@ -1,8 +1,8 @@
 # SPECIAL VARIABLES ARE 0-n, *, @, #, ?
 
-echo $0
-echo $1
-echo $2
-echo $@
-echo $*
-echo $#
+echo To shows the script name - $0
+echo To get first argument - $1
+echo To get second argument - $2
+echo To get all arguments - $@
+echo To get all arguments - $*
+echo To get number of arguments - $#
