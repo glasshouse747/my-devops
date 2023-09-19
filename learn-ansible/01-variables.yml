@@ -14,15 +14,23 @@
       ansible.builtin.debug:
         msg: "{{ URL }}"
 
-- name: Demo on variables
+- name: Demo on task variables
   hosts: localhost
+  vars:
+    URL: play.example.com
   tasks:
-    - name: Print a variable
+    - name: Print a task variable
       ansible.builtin.debug:
         msg: "{{ URL }}"
       vars:
-        URL: example.com
+        URL: task.example.com
+
+- name: Print play variable
+  ansible.builtin.debug:
+    msg: "{{ URL }}"
+  vars:
+    URL: play.example.com
 
 # The variable should be inside double or single quotes, because it will fail in some instances if a double quote is not used.
 
-# In the key:value, if the value is only a variable or when it begins with a variable it will fail
+# In the key:value, if the value is only a variable or when it begins with a variable it will fail.
