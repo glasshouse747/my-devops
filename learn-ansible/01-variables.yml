@@ -27,7 +27,7 @@
 
     - name: Print a play variable
       ansible.builtin.debug:
-        msg: "{{ URL }}"
+        msg: "{{ URL1 }}"
 
 # The variable should be inside double or single quotes, because it will fail in some instances if a double quote is not used.
 
