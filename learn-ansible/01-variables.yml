@@ -25,9 +25,9 @@
       vars:
         URL: task.example.com
 
-- name: Print play variable
-  ansible.builtin.debug:
-    msg: "{{ URL }}"
+    - name: Print play variable
+      ansible.builtin.debug:
+        msg: "{{ URL }}"
 
 # The variable should be inside double or single quotes, because it will fail in some instances if a double quote is not used.
 
