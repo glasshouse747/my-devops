@@ -28,8 +28,6 @@
 - name: Print play variable
   ansible.builtin.debug:
     msg: "{{ URL }}"
-  vars:
-    URL: play.example.com
 
 # The variable should be inside double or single quotes, because it will fail in some instances if a double quote is not used.
 
