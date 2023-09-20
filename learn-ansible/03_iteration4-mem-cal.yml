@@ -3,6 +3,6 @@
   tasks:
     - name: Memory Good
       ansible.builtin.debug:
-        msg:'{{ ansible_memory_mb["real"] }}'
+        msg: '{{ ansible_memory_mb["real"] }}'
 
 #  when: ansible_memory_mb["real"]["used"] |int < 50
