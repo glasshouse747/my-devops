@@ -1,0 +1,4 @@
+- name: Memory Good
+  ansible.builtin.debug:
+    msg: ansible_memory_mb["real"]["used"]
+#  when: ansible_memory_mb["real"]["used"] |int < 50
