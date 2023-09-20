@@ -5,9 +5,13 @@
       ansible.builtin.debug:
         msg: '{{ ansible_memory_mb["real"] }}'
 
-    - name: Used Memory
+    - name: Display Used Memory Only
       ansible.builtin.debug:
         msg: '{{ ansible_memory_mb["real"]["used"] }}'
+
+    - name: Display Actual Used Memory from Total Memory
+      ansible.builtin.debug:
+        msg: '{{ ansible_memory_mb["real"]["used"] / {{ ansible_memory_mb["real"]["total"] *  100 < 50 }}'
 
 
 #  when: ansible_memory_mb["real"]["used"] |int < 50
