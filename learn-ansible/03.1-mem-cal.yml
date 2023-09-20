@@ -5,27 +5,16 @@
       ansible.builtin.shell: free | grep Mem
       register: free
 
-    - name: Print free.stdout variable
-      ansible.builtin.debug:
-       msg: "{{free.stdout}}"
-
-    - name: Print free variable
-      ansible.builtin.debug:
-        msg: "{{free}}"
-
-    - name: Get Memory
-      ansible.builtin.shell: free | grep Mem | xargs
-      register: free
     - name: Set a fact
       ansible.builtin.set_fact:
         FREE: "{{free.stdout | split (' ') }}"
-
-    - name: Print free variable
-      ansible.builtin.debug:
-        msg: "{{ FREE[1] }}"
 
     - name: Print free.total.free variable
       ansible.builtin.set_fact:
         total: "{{ FREE[1] }}"
         free: "{{ FREE[3] }}"
+
+    - name: Print Free Output
+      ansible.builtin.debug:
+        msg: "{{ free/total }}"
 
