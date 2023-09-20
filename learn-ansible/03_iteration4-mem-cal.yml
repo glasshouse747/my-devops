@@ -12,7 +12,7 @@
     - name: Display Actual Used Memory from Total Memory
       ansible.builtin.debug:
         msg: Memory Good
-      when: ansible_memory_mb["real"]["used"] / {{ ansible_memory_mb["real"]["total"] *  100 < 50
+      when: ansible_memory_mb["real"]["used"] / ansible_memory_mb["real"]["total"] *  100 < 50
 
 
 #  when: ansible_memory_mb["real"]["used"] |int < 50
