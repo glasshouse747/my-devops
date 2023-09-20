@@ -2,6 +2,18 @@
   hosts: localhost
   tasks:
     - name: Get Memory
+      ansible.builtin.shell: free | grep Mem
+      register: free
+
+    - name: Print free variable
+      ansible.builtin.debug:
+       msg: "{{free.stdout}}"
+
+    - name: Print free variable
+      ansible.builtin.debug:
+        msg: "{{free}}"
+
+    - name: Get Memory
       ansible.builtin.shell: free | grep Mem | xargs
       register: free
     - name: Set a fact
