@@ -17,4 +17,3 @@
     - name: Print Free Output
       ansible.builtin.debug:
         msg: "{{ free|int / total|int }}"
-
