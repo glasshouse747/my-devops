@@ -9,7 +9,7 @@
     - name: Memory Good
       ansible.builtin.debug:
         msg: Memory Orange
-      when: ansible_memory_mb["real"]["used"] / ansible_memory_mb["real"]["total"] *  100 < 70
+      when: ansible_memory_mb["real"]["used"] / ansible_memory_mb["real"]["total"] > 50 and ansible_memory_mb["real"]["used"] / ansible_memory_mb["real"]["total"] *  100 < 70
 
     - name: Memory Red
       ansible.builtin.debug:
