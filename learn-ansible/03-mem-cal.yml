@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
     - name: Get Memory
-      ansible.builtin.shell: free | grep Mem
+      ansible.builtin.shell: free | grep Mem | xargs
       register: free
 
     - name: Print free.stdout variable
