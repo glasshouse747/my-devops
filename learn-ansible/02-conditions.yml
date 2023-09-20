@@ -1,0 +1,10 @@
+- name: Demo on conditions
+  hosts: localhost
+  tasks:
+    - name: Print Apple Price
+      ansible.builtin-debug:
+        msg: Apple Price is - 1$
+
+    - name: Print Orange Price
+      ansible.builtin-debug:
+        msg: Orange Price is - 2$
