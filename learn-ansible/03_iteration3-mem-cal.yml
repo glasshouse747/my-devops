@@ -1,0 +1,33 @@
+- name: Print Used Memory
+  hosts: localhost
+  tasks:
+    - name: Get Memory
+      ansible.builtin.shell: free | grep Mem | xargs
+      register: free
+
+    - name: Set a fact
+      ansible.builtin.set_fact:
+        FREE: "{{ free.stdout | split(' ') }}"
+
+    - name: Set facts free.total.free variable
+      ansible.builtin.set_fact:
+        used_mem: "{{ 100 - (FREE[3]|int / FREE[1]|int * 100) }}"
+
+    - name: Print Used Memory Output
+      ansible.builtin.debug:
+        msg: "{{ used_mem }}"
+
+    - name: Memory Good
+      ansible.builtin.debug:
+        msg: Memory Good
+      when: used_mem < 50
+
+    - name: Memory Orange
+      ansible.builtin.debug:
+        msg: Memory Good
+      when: used_mem > 50 and used_mem < 70
+
+    - name: Memory Red
+      ansible.builtin.debug:
+        msg: Memory Red
+      when: used_mem > 70
