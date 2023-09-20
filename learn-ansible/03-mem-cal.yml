@@ -25,6 +25,6 @@
         msg: "{{ FREE[1] }}"
 
     - name: Print free.total.free variable
-      ansible.builtin.debug:
+      ansible.builtin.set_fact:
         total: "{{ FREE[1] }}"
         free: "{{ FREE[3] }}"
