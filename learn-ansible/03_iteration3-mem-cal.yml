@@ -20,14 +20,14 @@
     - name: Memory Good
       ansible.builtin.debug:
         msg: Memory Good
-      when: used_mem < 50
+      when: used_mem |int < 50
 
     - name: Memory Orange
       ansible.builtin.debug:
         msg: Memory Good
-      when: used_mem > 50 and used_mem < 70
+      when: used_mem |int > 50 and used_mem|int < 70
 
     - name: Memory Red
       ansible.builtin.debug:
         msg: Memory Red
-      when: used_mem > 70
+      when: used_mem |int > 70
