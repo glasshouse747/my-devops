@@ -2,9 +2,10 @@
   hosts: localhost
   tasks:
     - name: Print Apple Price
-      ansible.builtin-debug:
+      ansible.builtin.debug:
         msg: Apple Price is - 1$
 
     - name: Print Orange Price
-      ansible.builtin-debug:
-        msg: Orange Price is - 2$
+      ansible.builtin.debug:
+        msg: Orange Price - 2$
+
