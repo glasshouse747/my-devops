@@ -11,10 +11,10 @@
 
     - name: Print free.total.free variable
       ansible.builtin.set_fact:
-        total: "{{ FREE[1] }}"
-        free: "{{ FREE[3] }}"
+        total: "{{ FREE[1] | int }}"
+        free: "{{ FREE[3] | int }}"
 
     - name: Print Free Output
       ansible.builtin.debug:
-        msg: "{{ free/total }}"
+        msg: "{{ free / total }}"
 
