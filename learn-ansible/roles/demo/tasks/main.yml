@@ -1,3 +1,8 @@
 - name: Declare a variable
   ansible.builtin.debug:
     msg: "URL = {{URL}}"
+
+- name: Copy file
+  ansible.builtin.copy:
+    src: test.txt
+    dest: /tmp/test.txt
