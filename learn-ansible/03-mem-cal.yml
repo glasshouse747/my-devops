@@ -6,4 +6,4 @@
       register: free
     - name: Print free variable
       ansible.builtin.debug:
-        {{free}}
+       msg: "{{free}}"
